@@ -102,3 +102,20 @@ inventory.placeOrder(601, prod1, 2);
 inventory.listOrders();
 console.log(prod1.getDetails());
 
+//Task 5 Product Restocking
+
+//Creates method to restock product in the inventory class
+restockProduct(productId, quantity) {
+    let product = this.products.find(product => product.id === productId); 
+    
+    //Increases stock if product is found
+    if (product) {
+        product.stock += quantity; 
+    }
+}
+
+//Test Cases
+inventory.restockProduct(101, 5);
+console.log(prod1.getDetails()); 
+
+
