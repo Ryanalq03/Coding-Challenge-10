@@ -50,3 +50,30 @@ getOrderDetails(){
 const order1 = new Order(501, prod1, 2);
 console.log(order1.getOrderDetails());
 console.log(prod1.getDetails());
+
+
+//Task 3 Inventory Class
+
+//Creates a class with a property
+class Inventory { 
+    constructor() {
+        this.products = []; 
+        this.orders = []; 
+    };
+
+//Method that adds a new product to inventory
+addProduct(product){
+    this.products.push(product);
+};
+
+//Method that lists products in array
+listProduct(){
+    return this.products.forEach(product => console.log(product.getDetails()))
+};
+}
+
+//Test Cases
+const inventory = new Inventory();
+inventory.addProduct(prod1);
+inventory.listProducts();
+
