@@ -77,3 +77,28 @@ const inventory = new Inventory();
 inventory.addProduct(prod1);
 inventory.listProducts();
 
+//Task 4 Order Management 
+
+//Created method that makes a new order and adds it to orders
+placeOrder(orderId, product, quantity){ 
+    if (product.stock >= quantity) {
+        let order = new Order(orderId, product, quantity); 
+        this.orders.push(order); 
+    } else {
+        return `${product.name} Out of Stock`;
+    }; 
+};
+
+//Method that shows orders made in the system
+listOrders() {
+    this.orders.forEach(order => 
+
+//logs results
+    console.log(order.getOrderDetails())); 
+}
+
+//Test Cases
+inventory.placeOrder(601, prod1, 2);
+inventory.listOrders();
+console.log(prod1.getDetails());
+
